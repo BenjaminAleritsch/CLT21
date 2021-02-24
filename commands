@@ -1,0 +1,6 @@
+sudo yum install epel-release git nano -y
+sudo yum install ansible -y
+git clone https://github.com/ansible-lockdown/RHEL7-STIG.git
+touch clt21-playbook
+nano clt21-playbook
+sudo ansible-playbook clt21-playbook.yml

@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  roles:
+    - role: RHEL7-STIG
+...
