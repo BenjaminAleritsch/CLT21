@@ -1,0 +1,21 @@
+# Install required Packages:
+sudo yum install openscap openscap-utils scap-security-guide git nano epel-release -y
+sudo yum install ansible -y
+
+# Switch to Security Profile Directory:
+cd /usr/share/xml/scap/ssg/content/
+
+# Display Security Profiles inside:
+oscap info ssg-rehl7-ds.xml
+
+# Evaluate System according to OSPP:
+oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_ospp --results -arf arf.xml --report report.html /usr/share/xml/scap/ssg/content/ssg-rhel7-ds.xml
+
+# OpenSCAP Ansible Mediation Playbook Folder:
+cd /usr/share/scap-security-guide/ansible/
+
+# Start Ansible Playbook:
+sudo ansible-playbook -i "localhost," -c local playbook.yml
+
+# Clone DISA STIG Playbook from GitHub:
+git clone --recursive https://github.com/ansible/ansible-lockdown.git
