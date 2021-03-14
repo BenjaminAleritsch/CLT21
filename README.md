@@ -1,2 +1,3 @@
 # CLT21
-talk resources
+## Link aufs Video:
+# https://tinyurl.com/bue8su3k
